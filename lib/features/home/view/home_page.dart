@@ -483,15 +483,16 @@ class _HomePageState extends State<HomePage> {
                             );
                           },
                         ),
-                      SwitchListTile.adaptive(
-                        secondary: const Icon(Icons.fingerprint),
-                        title: const Text('Enable biometrics'),
-                        value: _biometricEnabled,
-                        onChanged: (v) async {
-                          Navigator.pop(context);
-                          await _toggleBiometrics(v);
-                        },
-                      ),
+                      if (FeatureGate.canFingerPrint)
+                        SwitchListTile.adaptive(
+                          secondary: const Icon(Icons.fingerprint),
+                          title: const Text('Enable biometrics'),
+                          value: _biometricEnabled,
+                          onChanged: (v) async {
+                            Navigator.pop(context);
+                            await _toggleBiometrics(v);
+                          },
+                        ),
                       ListTile(
                         leading: const Icon(Icons.lock_outline),
                         title: const Text('Lock app'),

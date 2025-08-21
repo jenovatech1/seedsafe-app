@@ -8,6 +8,7 @@ class FeatureGate {
   // Free: tidak ada export apapun
   static const bool canExportQr = isPro;
   static const bool canExportFile = isPro;
+  static const bool canFingerPrint = isPro;
 
   // Batas QR tetap
   static int get maxQrChars => QrPayloadCodec.maxQrChars;
