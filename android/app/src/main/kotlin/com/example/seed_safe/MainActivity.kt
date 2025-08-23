@@ -1,4 +1,4 @@
-package com.example.seed_safe
+package com.jenova.seedsafe
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 
